@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<style type="text/css">
+    .create-form {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        margin: auto;
+    }
+
+    .submit-button {
+        max-width: 200px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 offset-lg-1">
+            {% if success_message %}
+            <h3 style="color:rgb(255, 7, 7); text-align: center;">{{success_message}}</h3>
+            {% endif %}
+
+            <form class="create-form" method="get" enctype="multipart/form-data" action="{% url 'user:editform' %}"
+                method="get">{% csrf_token %}
+
+                <!-- phonenumber -->
+                <label for="id_phonenumber">Enter User's Phone Number</label>
+                <div class="input-group">
+                    <input class="form-control rounded" placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon" name="q" />
+                    <button type="submit" class="btn btn-outline-primary">search</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+{% endblock content %}

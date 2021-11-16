@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<style type="text/css">
+  .card {
+    max-width: 700px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+
+    <!-- user_account -->
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Family</th>
+          <th scope="col">Phone number</th>
+          <th scope="col">Birth Date</th>
+          <th scope="col">gender</th>
+          <th scope="col">Address</th>
+
+        </tr>
+      </thead>
+      {% for user in user_account %}
+      <div class="d-flex flex-column">
+        {% include 'personal/snippets/detail_snippet.html' with value=user %}
+      </div>
+      {% endfor %}
+    </table>
+
+
+  </div>
+</div>
+{% endblock content %}

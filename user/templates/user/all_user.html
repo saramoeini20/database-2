@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<style type="text/css">
+
+
+  .container {
+    padding: 20px;
+  }
+
+  .users {
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+  }
+</style>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="users">
+      <ul class="list-group">
+
+        {% for user in allusers %}
+          <div class="d-flex flex-column">
+            <li class="list-group-item"> {{user}}
+            </li>
+        </div>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}
